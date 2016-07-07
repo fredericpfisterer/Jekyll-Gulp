@@ -23,9 +23,12 @@ Bower install your favorite framework on top of Jekyll
 
 ##  Installation
 	git clone https://github.com/fredericpfisterer/jekyll-bower-plate.git
+	cd jekyll-bower-plate
 	npm install
 	bower install --save yourfavoriteframework
 	gulp
+	
+[![asciicast](https://asciinema.org/a/c4qbd2dtmndr3otj5myi2jq8m.png)](https://asciinema.org/a/c4qbd2dtmndr3otj5myi2jq8m)
 
 ## build for production
 	gulp build --production
