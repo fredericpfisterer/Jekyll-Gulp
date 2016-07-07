@@ -36,7 +36,6 @@ Bower install your favorite framework on top of Jekyll
 ###  Examples
 
 #### [Zurb Foundation for Sites] (http://foundation.zurb.com/sites.html)
-Learn more about Foundation for Sites
 
 	bower install --save foundation-sites
 Make sure you [include foundation] (http://foundation.zurb.com/sites/docs/sass.html) in your sass :
@@ -48,6 +47,5 @@ Make sure you [include foundation] (http://foundation.zurb.com/sites/docs/sass.h
 	bower install --save bootstrap#v4.0.0-alpha.2
 
 #### [Susy] (http://susy.oddbird.net/)
-Learn more about Sush
 
 	bower install --save susy
