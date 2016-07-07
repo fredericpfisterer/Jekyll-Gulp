@@ -1,0 +1,71 @@
+browsersync:
+  notify: true
+  open:   true
+  port:   3000
+  server:
+    basedir: "_site/"
+  xip:    false
+  browser: "Google Chrome"
+
+clean:
+  # The jekyll build dir
+  - "_site"
+  - "assets/js/bower.js"
+
+copy:
+  # Paths to static assets that aren't (S)CSS or JavaScript
+  # because these are completely handled by the sass and javascript tasks
+  assets:
+    # all files below the assets dir
+    - "assets/**/*"
+    # exclusions:
+    - "!assets/{js,scss,css}/**/*"   # js, scss and css files
+    - "!assets/css{,/**}"            # css dir
+    - "!assets/js{,/**}"             # js dir
+    - "!assets/scss{,/**}"           # scss dir
+  dist: "_site/assets/"
+  notification: "Running Copy"
+
+sass:
+  # Autoprefixer will make sure your CSS works with these browsers
+  compatibility:
+    - "last 2 versions"
+    - "ie >= 9"
+  dest:
+    jekyllRoot: "assets/css/"
+    buildDir: "_site/assets/css/"
+  notification: "Running Sass"
+  src: "assets/scss/main.scss"
+
+javascript:
+  dest:
+    jekyllRoot: "assets/js/"
+    buildDir: "_site/assets/js/"
+  filename: "all.js"
+  notification: "Running JavaScript"
+  src:
+    - "!assets/js/all.js"
+    - "assets/js/bower.js"
+    - "assets/js/app.js"
+
+
+jekyll:
+  notification: "Running jekyll"
+
+watch:
+  images: "assets/img/**/*"
+  javascript: "assets/js/app.js"
+  sass: "assets/scss/**/*.scss"
+  pages:
+    - "*.{md,html,yml,xml}"
+    - "{_data,_includes,_layouts,_pages,_posts}/**/*.{md,html,yml,xml}"
+    - "!_site/**/*.*"
+    - "!assets/**/*.*"
+
+bower:
+  sass:
+    src: "./assets/scss/_bower.scss"
+    dest: "./assets/scss"
+  js:
+    src: "./assets/js/bower.js"
+    dest: "./assets/js"

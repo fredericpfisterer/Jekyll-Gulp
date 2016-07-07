@@ -1,0 +1,17 @@
+language: node_js
+
+node_js:
+  - '6'
+
+before_install:
+  - rvm install 2.2.3
+
+before_script:
+  - npm install -g bower
+  - npm install -g gulp
+  - bower install
+
+  - gem install bundler
+  - bundle install
+
+after_success: bundle exec travis-custom-deploy sftp _site/

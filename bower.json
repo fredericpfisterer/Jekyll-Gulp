@@ -1,0 +1,21 @@
+{
+  "name": "jekyll-bower-plate",
+  "description": "",
+  "main": "gulpfile.js",
+  "authors": [
+    "Frederic Pfisterer <fredericpfisterer@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {},
+  "dependencies": {
+    "susy": "^2.2.12"
+  }
+}
