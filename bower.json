@@ -15,7 +15,5 @@
     "tests"
   ],
   "devDependencies": {},
-  "dependencies": {
-    "susy": "^2.2.12"
-  }
+  "dependencies": {}
 }
