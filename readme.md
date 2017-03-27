@@ -26,6 +26,7 @@ Bower install your favorite framework on top of Jekyll
 	cd jekyll-bower-plate
 	npm install
 	bower install --save yourfavoriteframework
+	bundle install
 	gulp
 	
 [![asciicast](https://asciinema.org/a/c4qbd2dtmndr3otj5myi2jq8m.png)](https://asciinema.org/a/c4qbd2dtmndr3otj5myi2jq8m)
