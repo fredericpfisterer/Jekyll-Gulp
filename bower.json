@@ -6,7 +6,7 @@
     "Frederic Pfisterer <fredericpfisterer@gmail.com>"
   ],
   "license": "ISC",
-  "homepage": "",
+  "homepage": "https://github.com/fredericpfisterer/jekyll-bower-plate",
   "ignore": [
     "**/.*",
     "node_modules",
