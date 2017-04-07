@@ -14,6 +14,7 @@ var gulpif = require('gulp-if');
 var sourcemaps = require('gulp-sourcemaps');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
+var imagemin = require('gulp-imagemin');
 
 var PRODUCTION = !!(yargs.argv.production);
 
@@ -32,6 +33,7 @@ gulp.task('clean', function(done) {
 gulp.task('copy', function() {
     browserSync.notify(config.copy.notification);
     return gulp.src(config.copy.assets)
+        .pipe(imagemin())
         .pipe(gulp.dest(config.copy.dist));
 });
 

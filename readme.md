@@ -1,6 +1,6 @@
-# Jekyll bower-plate
+# Jekyll Gulp
 
-Bower install your favorite framework on top of Jekyll
+Use Gulp on top of Jekyll
 
 ## Features
 * Framework agnostic
