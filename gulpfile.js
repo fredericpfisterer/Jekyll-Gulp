@@ -33,7 +33,7 @@ gulp.task('clean', function(done) {
 gulp.task('copy', function() {
     browserSync.notify(config.copy.notification);
     return gulp.src(config.copy.assets)
-        .pipe(imagemin())
+        .pipe(gulpif(PRODUCTION, imagemin()))
         .pipe(gulp.dest(config.copy.dist));
 });
 
