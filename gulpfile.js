@@ -7,7 +7,7 @@ var gulp = require('gulp');
 var spawn = require('cross-spawn');
 var sass = require('gulp-sass');
 var browserSync = require('browser-sync');
-var wiredep = require('wiredep').stream;
+// var wiredep = require('wiredep').stream;
 var autoprefixer = require('gulp-autoprefixer');
 var cssnano = require('gulp-cssnano');
 var gulpif = require('gulp-if');
@@ -15,6 +15,7 @@ var sourcemaps = require('gulp-sourcemaps');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var imagemin = require('gulp-imagemin');
+var webpack = require('webpack-stream');
 
 var PRODUCTION = !!(yargs.argv.production);
 
@@ -37,12 +38,6 @@ gulp.task('copy', function() {
         .pipe(gulp.dest(config.copy.dist));
 });
 
-gulp.task('bower-sass', function() {
-    gulp.src(config.bower.sass.src)
-        .pipe(wiredep())
-        .pipe(gulp.dest(config.bower.sass.dest));
-});
-
 gulp.task('sass', function() {
     return gulp.src(config.sass.src)
         .pipe(sourcemaps.init())
@@ -55,24 +50,42 @@ gulp.task('sass', function() {
         .pipe(browserSync.stream());
 });
 
-
-gulp.task('bower-js', function() {
-  var js = require('wiredep')().js;
-  if (js) {
-    return gulp.src(require('wiredep')().js)
-        .pipe(concat('bower.js'))
-        .pipe(gulp.dest(config.bower.js.dest));
-  }
-});
-
-gulp.task('javascript', ['bower-js'], function() {
+gulp.task('javascript', function() {
     browserSync.notify(config.javascript.notification);
     return gulp.src(config.javascript.src)
-        .pipe(sourcemaps.init())
-        .pipe(concat(config.javascript.filename))
+        .pipe(gulpif(!PRODUCTION,webpack({
+            output: {
+                filename: "bundle.js"
+            },
+            devtool: 'source-map',
+            module: {
+                loaders: [
+                    {
+                        loader: 'babel',
+                        query: {
+                            presets: ['es2015']
+                        }
+                    }
+                ]
+            }
+        })))
+        .pipe(gulpif(PRODUCTION,webpack({
+            output: {
+                filename: "bundle.js"
+            },
+            module: {
+                loaders: [
+                    {
+                        loader: 'babel',
+                        query: {
+                            presets: ['es2015']
+                        }
+                    }
+                ]
+            }
+        })))
         .pipe(gulpif(PRODUCTION, uglify()))
-        .pipe(gulp.dest(config.javascript.dest.jekyllRoot))
-        .pipe(gulp.dest(config.javascript.dest.buildDir));
+        .pipe(gulp.dest('_site/assets/js/'))
 });
 
 gulp.task('jekyll-build', function(done) {
@@ -84,7 +97,7 @@ gulp.task('jekyll-build', function(done) {
 });
 
 gulp.task('build', function(done) {
-    sequence('bower-sass', 'clean', 'jekyll-build', ['sass', 'javascript'], 'copy', done);
+    sequence('clean', 'jekyll-build', ['sass', 'javascript'], 'copy', done);
 });
 
 gulp.task('browser-sync', function() {

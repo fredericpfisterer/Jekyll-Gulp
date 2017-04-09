@@ -38,16 +38,9 @@ sass:
   src: "assets/scss/main.scss"
 
 javascript:
-  dest:
-    jekyllRoot: "assets/js/"
-    buildDir: "_site/assets/js/"
-  filename: "all.js"
   notification: "Running JavaScript"
   src:
-    - "!assets/js/all.js"
-    - "assets/js/bower.js"
     - "assets/js/app.js"
-
 
 jekyll:
   notification: "Running jekyll"
@@ -61,11 +54,3 @@ watch:
     - "{_data,_includes,_layouts,_pages,_posts}/**/*.{md,html,yml,xml}"
     - "!_site/**/*.*"
     - "!assets/**/*.*"
-
-bower:
-  sass:
-    src: "./assets/scss/_bower.scss"
-    dest: "./assets/scss"
-  js:
-    src: "./assets/js/bower.js"
-    dest: "./assets/js"
