@@ -7,7 +7,7 @@ var gulp = require('gulp');
 var spawn = require('cross-spawn');
 var sass = require('gulp-sass');
 var browserSync = require('browser-sync');
-// var wiredep = require('wiredep').stream;
+var eslint = require('gulp-eslint');
 var autoprefixer = require('gulp-autoprefixer');
 var cssnano = require('gulp-cssnano');
 var gulpif = require('gulp-if');
@@ -50,7 +50,14 @@ gulp.task('sass', function() {
         .pipe(browserSync.stream());
 });
 
-gulp.task('javascript', function() {
+gulp.task('eslint', function() {
+  return gulp.src(config.javascript.src)
+  .pipe(eslint())
+  .pipe(eslint.format())
+  .pipe(eslint.failOnError());
+});
+
+gulp.task('javascript', ['eslint'], function() {
     browserSync.notify(config.javascript.notification);
     return gulp.src(config.javascript.src)
         .pipe(gulpif(!PRODUCTION,webpack({
