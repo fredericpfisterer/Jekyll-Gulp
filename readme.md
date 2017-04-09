@@ -13,6 +13,7 @@ Use Gulp on top of Jekyll
 * For production builds:
 	* CSS compression
 	* JavaScript compression
+	* Images compression
 
 ## Requirements
 * Nodejs
