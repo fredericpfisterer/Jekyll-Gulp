@@ -5,10 +5,9 @@ Use Gulp on top of Jekyll
 ## Features
 * Bourbon Bitters and Neat preinstalled
 * gulp yaml config file
-* Automatically inject bower dependencies (SASS and JavaScript)
+* Webpack + Babel ES 2015
 * Clean and build Jekyll
 * Sass compilation and prefixing
-* JavaScript concatenation
 * Built-in BrowserSync server
 * Travis deployment ready
 * For production builds:
@@ -18,7 +17,6 @@ Use Gulp on top of Jekyll
 ## Requirements
 * Nodejs
 * Gulp
-* Bower
 * Jekyll
 * Bundler
 
@@ -26,7 +24,6 @@ Use Gulp on top of Jekyll
 	git clone https://github.com/fredericpfisterer/jekyll-bower-plate.git
 	cd jekyll-bower-plate
 	npm install
-	bower install --save yourfavoriteframework
 	bundle install
 
 ## dev
