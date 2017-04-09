@@ -5,6 +5,7 @@ Use Gulp on top of Jekyll
 ## Features
 * Bourbon Bitters and Neat preinstalled
 * gulp yaml config file
+* Eslint
 * Webpack + Babel ES 2015
 * Clean and build Jekyll
 * Sass compilation and prefixing
