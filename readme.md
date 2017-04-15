@@ -4,7 +4,7 @@ Use Gulp on top of Jekyll
 
 ## Features
 * Bourbon Bitters and Neat preinstalled
-* gulp yaml config file
+* Gulp yaml config file
 * Automatically inject bower dependencies (SASS and JavaScript)
 * Clean and build Jekyll
 * Sass compilation and prefixing
@@ -15,7 +15,7 @@ Use Gulp on top of Jekyll
 	* CSS compression
 	* JavaScript compression
 	* Minify PNG, JPEG, GIF and SVG images
-* deploy with rsync
+* Deploy with rsync
 
 ## Requirements
 * Nodejs
