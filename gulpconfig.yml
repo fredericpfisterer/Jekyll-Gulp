@@ -69,3 +69,8 @@ bower:
   js:
     src: "./assets/js/bower.js"
     dest: "./assets/js"
+
+deploy:
+  hostname: 'leslash.com'
+  destination: '/srv/users/serverpilot/apps/xxxxx/public/'
+  username: 'serverpilot'

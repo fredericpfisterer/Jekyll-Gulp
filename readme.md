@@ -14,6 +14,8 @@ Use Gulp on top of Jekyll
 * For production builds:
 	* CSS compression
 	* JavaScript compression
+	* Minify PNG, JPEG, GIF and SVG images
+* deploy with rsync
 
 ## Requirements
 * Nodejs
@@ -25,7 +27,7 @@ Use Gulp on top of Jekyll
 ##  Installation
 	git clone https://github.com/fredericpfisterer/jekyll-bower-plate.git
 	cd jekyll-bower-plate
-	npm install
+	npm install or yarn
 	bower install --save yourfavoriteframework
 	bundle install
 
