@@ -45,6 +45,11 @@ javascript:
 jekyll:
   notification: "Running jekyll"
 
+deploy:
+  hostname: 'leslash.com'
+  destination: '/srv/users/serverpilot/apps/xxxxx/public/'
+  username: 'serverpilot'
+
 watch:
   images: "assets/img/**/*"
   javascript: "assets/js/app.js"
