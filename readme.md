@@ -14,7 +14,8 @@ Use Gulp on top of Jekyll
 * For production builds:
 	* CSS compression
 	* JavaScript compression
-	* Images compression
+	* Minify PNG, JPEG, GIF and SVG images
+* Deploy with rsync
 
 ## Requirements
 * Nodejs
