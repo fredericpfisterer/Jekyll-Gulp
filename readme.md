@@ -2,7 +2,7 @@
 
 Use Gulp on top of Jekyll
 
-> I actually won't maintained this repo anymore as I migrated to laravel mix : https://github.com/fredericpfisterer/jekyll-mix
+> I actually won't maintain this repo anymore as I migrated to laravel mix : https://github.com/fredericpfisterer/jekyll-mix
 
 ## Features
 * Bourbon Bitters and Neat preinstalled
